@@ -1,0 +1,49 @@
+﻿@model MvcTutorial20220421.Models.TbHero
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TbHero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Atk" class="control-label"></label>
+                <input asp-for="Atk" class="form-control" />
+                <span asp-validation-for="Atk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hp" class="control-label"></label>
+                <input asp-for="Hp" class="form-control" />
+                <span asp-validation-for="Hp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Skill" class="control-label"></label>
+                <input asp-for="Skill" class="form-control" />
+                <span asp-validation-for="Skill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
