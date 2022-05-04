@@ -6,29 +6,29 @@
 
 <h1>@ViewData["Message"]</h1>
 
-<div class="row">  
-    <form asp-action="Search">
+<form asp-action="Search">
+    <div class="row">
         <div class="form-group col-sm-3">
-            <label asp-for="SearchParams.Name" class="control-label"></label>
+            <label asp-for="SearchParams.Name" class="text-danger control-label"></label>
             <input asp-for="SearchParams.Name" class="form-control" />
         </div>
         <div class="form-group col-sm-3">
-            <label asp-for="SearchParams.MinAtk" class="control-label"></label>
+            <label asp-for="SearchParams.MinAtk" class="text-danger control-label"></label>
             <input asp-for="SearchParams.MinAtk" class="form-control" />
             <span asp-validation-for="SearchParams.MinAtk" class="text-danger"></span>
         </div>
         <div class="form-group col-sm-3">
-            <label asp-for="SearchParams.MaxAtk" class="control-label"></label>
+            <label asp-for="SearchParams.MaxAtk" class="text-danger control-label"></label>
             <input asp-for="SearchParams.MaxAtk" class="form-control" />
             <span asp-validation-for="SearchParams.MaxAtk" class="text-danger"></span>
         </div>
         <div class="form-group col-sm-3">
-            <input type="submit" value="Search" class="btn btn-primary" />
+            <input type="submit" value="Search" class="btn btn-success" />
         </div>
-    </form>
-</div>
+    </div>
+</form>
 
-<table class="table">@*表格的根（容器）*@
+<table class="table table-striped">@*表格的根（容器）*@
     <thead>@*表頭*@
         <tr>
             <th>
@@ -41,7 +41,7 @@
                 @Html.DisplayNameFor(model => model.Heroes[0].Hp)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Heroes[0].Name)
+                @Html.DisplayNameFor(model => model.Heroes[0].Skill)
             </th>
             <th></th>
         </tr>
